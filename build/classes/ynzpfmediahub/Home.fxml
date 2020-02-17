@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ynzpfmediahub.HomeController">
+   <children>
+      <Text layoutX="26.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MediaHub">
+         <font>
+            <Font name="Apple Color Emoji" size="38.0" />
+         </font>
+      </Text>
+      <HBox alignment="CENTER_LEFT" layoutX="68.0" layoutY="154.0" prefHeight="38.0" prefWidth="524.0" spacing="10.0">
+         <children>
+            <TextField fx:id="searchTextField" prefHeight="26.0" prefWidth="414.0" />
+            <Button mnemonicParsing="false" onAction="#handleSearch" text="Search" />
+         </children>
+      </HBox>
+      <ListView fx:id="videoListView" layoutX="68.0" layoutY="225.0" prefHeight="200.0" prefWidth="400.0" />
+      <ListView fx:id="newsListView" layoutX="68.0" layoutY="478.0" prefHeight="200.0" prefWidth="400.0" />
+      <WebView fx:id="newsWebView" layoutX="536.0" layoutY="478.0" prefHeight="200.0" prefWidth="400.0" />
+      <WebView fx:id="videoWebView" layoutX="536.0" layoutY="225.0" prefHeight="200.0" prefWidth="400.0" />
+      <MenuBar layoutX="68.0" layoutY="82.0" prefHeight="29.0" prefWidth="414.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Home">
+               <items>
+                  <Menu mnemonicParsing="false" text="Load">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#importSavedJSON" text="Import Saved JSON" />
+                    </items>
+                  </Menu>
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#handleAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <RadioButton fx:id="nytRadioButton" layoutX="546.0" layoutY="451.0" mnemonicParsing="false" text="NYT" />
+      <RadioButton fx:id="newsApiRadioButton" layoutX="671.0" layoutY="451.0" mnemonicParsing="false" text="Top Headlines (News API)" />
+      <Button layoutX="346.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSaveVideo" prefHeight="27.0" prefWidth="122.0" text="Video to Save Que" />
+      <Button layoutX="68.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleSaveArticle" text="Article to Save Que" />
+      <TextArea fx:id="savedTextArea" layoutX="68.0" layoutY="732.0" prefHeight="132.0" prefWidth="881.0" />
+      <Button layoutX="68.0" layoutY="695.0" mnemonicParsing="false" onAction="#handleSaveQue" text="Save" />
+   </children>
+</AnchorPane>
